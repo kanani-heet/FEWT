@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>console lab</title>
+</head>
+<body>
+
+	<script>
+		
+		console.log("----- Program 1 -----");
+
+		let num1 = "123";
+		let num2 = "45.67";
+		let num3 = "Hello";
+
+		console.log("parseInt(num1):", parseInt(num1));
+		console.log("parseFloat(num2):", parseFloat(num2));
+		console.log("Number(num1):", Number(num1));
+		console.log("isNaN(num3):", isNaN(num3));
+
+		let value = 12.34567;
+		console.log("toFixed(2):", value.toFixed(2));
+
+		console.log("----- Program 2 -----");
+
+		let n1 = parseFloat(prompt("Enter first number:"));
+		let n2 = parseFloat(prompt("Enter second number:"));
+		let op1 = prompt("Enter operator (+,-,*,/,%):");
+
+		if (op1 == "+")
+			console.log("Addition =", n1 + n2);
+		else if (op1 == "-")
+			console.log("Subtraction =", n1 - n2);
+		else if (op1 == "*")
+			console.log("Multiplication =", n1 * n2);
+		else if (op1 == "/")
+			console.log("Division =", n1 / n2);
+		else if (op1 == "%")
+			console.log("Modulus =", n1 % n2);
+		else
+			console.log("Invalid Operator");
+
+		console.log("----- Program 3 -----");
+
+		let a1 = parseFloat(prompt("Enter First Number:"));
+		let b1 = parseFloat(prompt("Enter Second Number:"));
+		let op2 = prompt("Enter Operator (+,-,*,/,%):");
+
+		switch(op2)
+		{
+		case "+":
+			console.log("Addition =", a1 + b1);
+			break;
+
+		case "-":
+			console.log("Subtraction =", a1 - b1);
+			break;
+
+		case "*":
+			console.log("Multiplication =", a1 * b1);
+			break;
+
+		case "/":
+			console.log("Division =", a1 / b1);
+			break;
+
+		case "%":
+			console.log("Modulus =", a1 % b1);
+			break;
+
+		default:
+			console.log("Invalid Operator");
+		}
+
+		console.log("----- Program 4 -----");
+
+		let s1 = parseInt(prompt("Enter marks of Subject 1:"));
+		let s2 = parseInt(prompt("Enter marks of Subject 2:"));
+		let s3 = parseInt(prompt("Enter marks of Subject 3:"));
+		let s4 = parseInt(prompt("Enter marks of Subject 4:"));
+		let s5 = parseInt(prompt("Enter marks of Subject 5:"));
+
+		let total = s1 + s2 + s3 + s4 + s5;
+		let per = total / 5;
+		let grade;
+
+		if (s1 >= 40 && s2 >= 40 && s3 >= 40 && s4 >= 40 && s5 >= 40)
+		{
+			console.log("Result : PASS");
+
+			if (per > 90)
+				grade = "A";
+			else if (per > 80)
+				grade = "B";
+			else if (per > 70)
+				grade = "C";
+			else if (per > 60)
+				grade = "D";
+			else if (per > 40)
+				grade = "E";
+			else
+				grade = "F";
+
+			console.log("Percentage :", per + "%");
+			console.log("Grade :", grade);
+		}
+		else
+		{
+			console.log("Result : FAIL");
+			console.log("Grade : F");
+		}
+
+		console.log("----- Program 5 -----");
+
+		let x = parseInt(prompt("Enter first number:"));
+		let y = parseInt(prompt("Enter second number:"));
+
+		console.log("Before Swapping");
+		console.log("x =", x);
+		console.log("y =", y);
+
+		x = x + y;
+		y = x - y;
+		x = x - y;
+
+		console.log("After Swapping");
+		console.log("x =", x);
+		console.log("y =", y);
+
+
+	</script>
+
+</body>
+</html>
