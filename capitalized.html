@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capitalize String</title>
+</head>
+<body>
+
+<script>
+    // Function to capitalize the first letter
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+    // Take input from user
+    let text = prompt("Enter a string:");
+
+    // Call function
+    let result = capitalize(text);
+
+    // Display output
+    alert("Capitalized String: " + result);
+
+    console.log("Original String: " + text);
+    console.log("Capitalized String: " + result);
+</script>
+
+</body>
+</html>
