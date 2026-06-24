@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Programs</title>
+</head>
+<body>
+
+<script>
+
+// ===============================
+// 1. Factors of a Number
+// ===============================
+var num1 = parseInt(prompt("Program 1\nEnter a number to find factors:"));
+
+console.log("Factors of " + num1 + " are:");
+for (var i = 1; i <= num1; i++) {
+    if (num1 % i == 0) {
+        console.log(i);
+    }
+}
+alert("Factors printed in Console");
+
+// ===============================
+// 2. Prime Numbers Between Range
+// ===============================
+var start = parseInt(prompt("Program 2\nEnter starting number:"));
+var end = parseInt(prompt("Enter ending number:"));
+
+console.log("Prime numbers between " + start + " and " + end + ":");
+
+for (var i = start; i <= end; i++) {
+    var prime = true;
+
+    if (i < 2) {
+        prime = false;
+    }
+
+    for (var j = 2; j < i; j++) {
+        if (i % j == 0) {
+            prime = false;
+            break;
+        }
+    }
+
+    if (prime) {
+        console.log(i);
+    }
+}
+alert("Prime numbers printed in Console");
+
+// ===============================
+// 3. GCD of Two Numbers
+// ===============================
+var a = parseInt(prompt("Program 3\nEnter first number:"));
+var b = parseInt(prompt("Enter second number:"));
+
+var gcd = 1;
+
+for (var i = 1; i <= a && i <= b; i++) {
+    if (a % i == 0 && b % i == 0) {
+        gcd = i;
+    }
+}
+
+console.log("GCD = " + gcd);
+alert("GCD = " + gcd);
+
+// ===============================
+// 4. 2-Digit Number Power Logic
+// ===============================
+var num2 = parseInt(prompt("Program 4\nEnter a 2-digit number:"));
+
+var firstDigit = Math.floor(num2 / 10);
+var secondDigit = num2 % 10;
+
+var result = 1;
+
+for (var i = 1; i <= secondDigit; i++) {
+    result = result * firstDigit;
+}
+
+console.log("First Digit = " + firstDigit);
+console.log("Second Digit = " + secondDigit);
+console.log("Result = " + result);
+
+alert(firstDigit + "^" + secondDigit + " = " + result);
+
+// ===============================
+// 5. Number to Words (0-999)
+// ===============================
+var n = prompt("Program 5\nEnter a number (0-999):");
+
+if (isNaN(n)) {
+    alert("Not a Number");
+}
+else {
+    n = parseInt(n);
+
+    if (n < 0 || n > 999) {
+        alert("Out of Range");
+    }
+    else {
+
+        var ones = ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"];
+        var teens = ["Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"];
+        var tens = ["","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"];
+
+        var words = "";
+
+        if (n >= 100) {
+            words += ones[Math.floor(n / 100)] + " Hundred ";
+            n = n % 100;
+        }
+
+        if (n >= 20) {
+            words += tens[Math.floor(n / 10)] + " ";
+            n = n % 10;
+        }
+        else if (n >= 10) {
+            words += teens[n - 10] + " ";
+            n = 0;
+        }
+
+        if (n > 0) {
+            words += ones[n];
+        }
+
+        if (words == "") {
+            words = "Zero";
+        }
+
+        alert(words);
+        console.log(words);
+    }
+}
+
+// ===============================
+// 6. First and Last 'a'
+// ===============================
+var word = prompt("Program 6\nEnter a word:");
+
+var first = word.indexOf("a");
+var last = word.lastIndexOf("a");
+
+if (first == -1) {
+    alert("Letter 'a' not found.");
+}
+else {
+    var middle = word.substring(first + 1, last);
+
+    console.log("First occurrence of a: Position " + (first + 1));
+    console.log("Last occurrence of a: Position " + (last + 1));
+    console.log("String between them: " + middle);
+
+    alert(
+        "First occurrence of a: Position " + (first + 1) +
+        "\nLast occurrence of a: Position " + (last + 1) +
+        "\nString between them: " + middle
+    );
+}
+
+</script>
+
+</body>
+</html>
