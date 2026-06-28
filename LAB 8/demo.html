@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LAB-8 JavaScript Programs</title>
+</head>
+<body>
+
+<h2>LAB-8 JavaScript Programs</h2>
+<p>Press F12 → Console to see outputs.</p>
+
+<script>
+
+let choice = prompt(
+"LAB-8 MENU\n\n" +
+"1. Simple Calculator\n" +
+"2. Prime Number\n" +
+"3. Factorial\n" +
+"4. Fibonacci Series\n" +
+"5. Palindrome Number\n" +
+"6. Armstrong Number\n" +
+"7. Popup Boxes Demo\n" +
+"8. GUI Calculator\n\n" +
+"Enter your choice (1-8):"
+);
+
+switch(choice){
+
+//------------------------------------------------------
+// 1. Calculator
+//------------------------------------------------------
+case "1":
+
+let n1 = Number(prompt("Enter First Number"));
+let n2 = Number(prompt("Enter Second Number"));
+let op = prompt("Enter Operator (+,-,*,/,%)");
+
+let ans;
+
+switch(op){
+    case "+":
+        ans = n1 + n2;
+        break;
+    case "-":
+        ans = n1 - n2;
+        break;
+    case "*":
+        ans = n1 * n2;
+        break;
+    case "/":
+        ans = n1 / n2;
+        break;
+    case "%":
+        ans = n1 % n2;
+        break;
+    default:
+        ans = "Invalid Operator";
+}
+
+alert("Answer = " + ans);
+console.log("Answer =", ans);
+
+break;
+
+//------------------------------------------------------
+// 2. Prime Number
+//------------------------------------------------------
+case "2":
+
+let p = Number(prompt("Enter Number"));
+let prime = true;
+
+if(p<=1)
+    prime = false;
+
+for(let i=2;i<=Math.sqrt(p);i++){
+    if(p%i==0){
+        prime=false;
+        break;
+    }
+}
+
+if(prime){
+    alert(p + " is Prime");
+    console.log(p + " is Prime");
+}
+else{
+    alert(p + " is Not Prime");
+    console.log(p + " is Not Prime");
+}
+
+break;
+
+//------------------------------------------------------
+// 3. Factorial
+//------------------------------------------------------
+case "3":
+
+let f = Number(prompt("Enter Number"));
+let fact = 1;
+
+for(let i=1;i<=f;i++)
+    fact*=i;
+
+alert("Factorial = " + fact);
+console.log("Factorial =", fact);
+
+break;
+
+//------------------------------------------------------
+// 4. Fibonacci
+//------------------------------------------------------
+case "4":
+
+let limit = Number(prompt("Enter Limit"));
+
+let a=0,b=1,c;
+let series="";
+
+while(a<=limit){
+    series += a + " ";
+    c=a+b;
+    a=b;
+    b=c;
+}
+
+alert(series);
+console.log(series);
+
+break;
+
+//------------------------------------------------------
+// 5. Palindrome
+//------------------------------------------------------
+case "5":
+
+let num = prompt("Enter Number");
+let rev = num.split("").reverse().join("");
+
+if(num==rev){
+    alert("Palindrome");
+    console.log("Palindrome");
+}
+else{
+    alert("Not Palindrome");
+    console.log("Not Palindrome");
+}
+
+break;
+
+//------------------------------------------------------
+// 6. Armstrong
+//------------------------------------------------------
+case "6":
+
+let arm = prompt("Enter Number");
+let temp = arm;
+let sum = 0;
+
+for(let digit of arm){
+    sum += Math.pow(Number(digit), arm.length);
+}
+
+if(sum==temp){
+    alert("Armstrong Number");
+    console.log("Armstrong Number");
+}
+else{
+    alert("Not Armstrong Number");
+    console.log("Not Armstrong Number");
+}
+
+break;
+
+//------------------------------------------------------
+// 7. Popup Boxes Demo
+//------------------------------------------------------
+case "7":
+
+alert("This is Alert Box.");
+
+let name = prompt("Enter Your Name");
+alert("Welcome " + name);
+
+let result = confirm("Do you like JavaScript?");
+
+if(result){
+    alert("You clicked OK");
+    console.log("OK Clicked");
+}
+else{
+    alert("You clicked Cancel");
+    console.log("Cancel Clicked");
+}
+
+break;
+
+//------------------------------------------------------
+// 8. GUI Calculator
+//------------------------------------------------------
+case "8":
+
+document.write(`
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+font-family:Arial;
+text-align:center;
+margin-top:50px;
+}
+.calculator{
+width:250px;
+margin:auto;
+padding:20px;
+border:2px solid black;
+border-radius:10px;
+}
+input{
+width:90%;
+padding:10px;
+margin:5px;
+}
+button{
+padding:10px 20px;
+margin:5px;
+}
+</style>
+</head>
+<body>
+
+<div class="calculator">
+
+<h2>Calculator</h2>
+
+<input type="number" id="num1" placeholder="First Number">
+
+<input type="number" id="num2" placeholder="Second Number">
+
+<br>
+
+<button onclick="calc('+')">+</button>
+<button onclick="calc('-')">-</button>
+<button onclick="calc('*')">*</button>
+<button onclick="calc('/')">/</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+<script>
+
+function calc(op){
+
+let a=Number(document.getElementById('num1').value);
+let b=Number(document.getElementById('num2').value);
+
+let ans=0;
+
+switch(op){
+
+case '+':
+ans=a+b;
+break;
+
+case '-':
+ans=a-b;
+break;
+
+case '*':
+ans=a*b;
+break;
+
+case '/':
+ans=a/b;
+break;
+
+}
+
+document.getElementById("result").innerHTML="Answer = "+ans;
+
+}
+
+<\/script>
+
+</body>
+</html>
+`);
+
+break;
+
+//------------------------------------------------------
+default:
+alert("Invalid Choice");
+
+}
+
+</script>
+
+</body>
+</html>
