@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LAB-7 Pattern Printing</title>
+</head>
+<body>
+
+<h2>LAB-7 Pattern Printing Using JavaScript</h2>
+
+<script>
+
+//=========================
+// Pattern 1
+// *
+// **
+// ***
+// ****
+// *****
+//=========================
+let p1 = "Pattern 1\n";
+console.log("Pattern 1");
+for(let i=1;i<=5;i++)
+{
+    let row="";
+    for(let j=1;j<=i;j++)
+    {
+        row += "*";
+    }
+    console.log(row);
+    p1 += row + "\n";
+}
+alert(p1);
+
+
+//=========================
+// Pattern 2
+// *****
+// ****
+// ***
+// **
+// *
+//=========================
+let p2 = "Pattern 2\n";
+console.log("Pattern 2");
+for(let i=5;i>=1;i--)
+{
+    let row="";
+    for(let j=1;j<=i;j++)
+    {
+        row += "*";
+    }
+    console.log(row);
+    p2 += row + "\n";
+}
+alert(p2);
+
+
+//=========================
+// Pattern 3
+//     *
+//    **
+//   ***
+//  ****
+// *****
+//=========================
+let p3 = "Pattern 3\n";
+console.log("Pattern 3");
+for(let i=1;i<=5;i++)
+{
+    let row="";
+    for(let s=1;s<=5-i;s++)
+        row+=" ";
+
+    for(let j=1;j<=i;j++)
+        row+="*";
+
+    console.log(row);
+    p3+=row+"\n";
+}
+alert(p3);
+
+
+//=========================
+// Pattern 4
+//     *
+//    * *
+//   * * *
+//  * * * *
+// * * * * *
+//=========================
+let p4="Pattern 4\n";
+console.log("Pattern 4");
+
+for(let i=1;i<=5;i++)
+{
+    let row="";
+
+    for(let s=1;s<=5-i;s++)
+        row+=" ";
+
+    for(let j=1;j<=i;j++)
+        row+="* ";
+
+    console.log(row);
+    p4+=row+"\n";
+}
+alert(p4);
+
+
+//=========================
+// Pattern 5
+// *
+// * *
+// * * *
+// * *
+// *
+//=========================
+let p5="Pattern 5\n";
+console.log("Pattern 5");
+
+for(let i=1;i<=3;i++)
+{
+    let row="";
+    for(let j=1;j<=i;j++)
+        row+="* ";
+
+    console.log(row);
+    p5+=row+"\n";
+}
+
+for(let i=2;i>=1;i--)
+{
+    let row="";
+    for(let j=1;j<=i;j++)
+        row+="* ";
+
+    console.log(row);
+    p5+=row+"\n";
+}
+alert(p5);
+
+
+//=========================
+// Pattern 6
+// 1
+// 11
+// 121
+// 1331
+// 14641
+//=========================
+let p6="Pattern 6\n";
+console.log("Pattern 6");
+
+let arr=["1","11","121","1331","14641"];
+
+for(let i=0;i<arr.length;i++)
+{
+    console.log(arr[i]);
+    p6+=arr[i]+"\n";
+}
+alert(p6);
+
+
+//=========================
+// Pattern 7
+// 1
+// 2 2
+// 3 3 3
+// 2 2
+// 1
+//=========================
+let p7="Pattern 7\n";
+console.log("Pattern 7");
+
+console.log("1");
+p7+="1\n";
+
+console.log("2 2");
+p7+="2 2\n";
+
+console.log("3 3 3");
+p7+="3 3 3\n";
+
+console.log("2 2");
+p7+="2 2\n";
+
+console.log("1");
+p7+="1\n";
+
+alert(p7);
+
+
+//=========================
+// Pattern 8
+// *
+// * * *
+// * * * * *
+// * * * * * * *
+// * * * * * * * * *
+//=========================
+let p8="Pattern 8\n";
+console.log("Pattern 8");
+
+for(let i=1;i<=5;i++)
+{
+    let row="";
+    for(let j=1;j<=2*i-1;j++)
+        row+="* ";
+
+    console.log(row);
+    p8+=row+"\n";
+}
+alert(p8);
+
+</script>
+
+</body>
+</html>
