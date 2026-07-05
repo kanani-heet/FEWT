@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard Events</title>
+</head>
+<body>
+
+<h2>Keyboard Event Demo</h2>
+
+<input type="text"
+       onkeydown="show('Key Down')"
+       onkeypress="show('Key Press')"
+       onkeyup="show('Key Up')"
+       placeholder="Type here">
+
+<p id="result"></p>
+
+<script>
+function show(eventName)
+{
+    document.getElementById("result").innerHTML =
+    "Event Fired: " + eventName;
+}
+</script>
+
+</body>
+</html>

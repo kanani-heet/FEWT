@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events</title>
+</head>
+<body>
+
+<button onclick="show('Click')"
+ondblclick="show('Double Click')"
+onmouseover="show('Mouse Over')"
+onmouseout="show('Mouse Out')"
+onmousedown="show('Mouse Down')"
+onmouseup="show('Mouse Up')">
+Try Mouse Events
+</button>
+
+<h2 id="result"></h2>
+
+<script>
+function show(eventName) {
+    document.getElementById("result").innerHTML =
+    "Event Fired : " + eventName;
+}
+</script>
+
+</body>
+</html>

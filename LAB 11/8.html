@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remove Last Item</title>
+</head>
+<body>
+
+<ul id="list">
+    <li>Apple</li>
+    <li>Mango</li>
+    <li>Banana</li>
+</ul>
+
+<button onclick="removeItem()">Remove Last Item</button>
+
+<script>
+function removeItem() {
+    var list = document.getElementById("list");
+
+    if (list.lastElementChild) {
+        list.removeChild(list.lastElementChild);
+    }
+}
+</script>
+
+</body>
+</html>

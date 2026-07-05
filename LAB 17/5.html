@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capitalize Colors</title>
+</head>
+<body>
+
+<script>
+let colors = ["red", "green", "blue", "yellow"];
+
+let capitalized = colors.map(color =>
+    color.charAt(0).toUpperCase() + color.slice(1)
+);
+
+console.log("Original Colors:", colors);
+console.log("Capitalized Colors:", capitalized);
+</script>
+
+</body>
+</html>

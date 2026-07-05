@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Event Demo</title>
+</head>
+<body>
+
+<h1 id="heading"
+onmouseover="yellow()"
+onmouseout="black()">
+Mouse Event Demo
+</h1>
+
+<button onclick="showTime()">Find Time</button>
+
+<button onclick="red()">Red</button>
+
+<button onclick="green()">Green</button>
+
+<p id="time"></p>
+
+<script>
+
+function yellow() {
+    document.getElementById("heading").style.color = "yellow";
+}
+
+function black() {
+    document.getElementById("heading").style.color = "black";
+}
+
+function showTime() {
+    document.getElementById("time").innerHTML = new Date();
+}
+
+function red() {
+    document.body.style.backgroundColor = "red";
+}
+
+function green() {
+    document.body.style.backgroundColor = "green";
+}
+
+</script>
+
+</body>
+</html>

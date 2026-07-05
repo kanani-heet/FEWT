@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DHTML Example</title>
+</head>
+<body>
+
+    <h2 id="text">Welcome to DHTML</h2>
+
+    <button onclick="changeStyle()">Click Here</button>
+
+    <script>
+        function changeStyle() {
+            var obj = document.getElementById("text");
+
+            // Change text
+            obj.innerHTML = "DHTML Applied Successfully!";
+
+            // Change style
+            obj.style.color = "blue";
+            obj.style.backgroundColor = "yellow";
+            obj.style.fontSize = "30px";
+
+            // Display messages
+            alert("DHTML Applied Successfully!");
+            console.log("Text and Style Changed");
+            document.write("<h3>DHTML Example Executed Successfully.</h3>");
+        }
+    </script>
+
+</body>
+</html>

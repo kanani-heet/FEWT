@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>includes() and find()</title>
+</head>
+<body>
+
+<h2>includes() and find() Demo</h2>
+
+<script>
+    let numbers = [10, 20, 30, 40, 50];
+
+    // includes()
+    document.write("Array: " + numbers + "<br><br>");
+    document.write("Includes 30? " + numbers.includes(30) + "<br>");
+    document.write("Includes 70? " + numbers.includes(70) + "<br><br>");
+
+    // find()
+    let value = numbers.find(num => num > 25);
+
+    document.write("First number greater than 25: " + value);
+</script>
+
+</body>
+</html>

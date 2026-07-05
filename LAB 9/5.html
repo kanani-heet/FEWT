@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scientific Calculator</title>
+</head>
+<body>
+
+<h2>Scientific Calculator</h2>
+
+Number 1:
+<input type="number" id="num1"><br><br>
+
+Number 2:
+<input type="number" id="num2"><br><br>
+
+<input type="button" value="Addition" onclick="calculate('+')">
+<input type="button" value="Subtraction" onclick="calculate('-')">
+<input type="button" value="Multiplication" onclick="calculate('*')">
+<input type="button" value="Division" onclick="calculate('/')">
+<br><br>
+
+<input type="button" value="Square Root" onclick="calculate('sqrt')">
+<input type="button" value="Power" onclick="calculate('pow')">
+<input type="button" value="Sin" onclick="calculate('sin')">
+<input type="button" value="Cos" onclick="calculate('cos')">
+<input type="button" value="Tan" onclick="calculate('tan')">
+
+<script>
+
+function calculate(op)
+{
+    let n1 = parseFloat(document.getElementById("num1").value);
+    let n2 = parseFloat(document.getElementById("num2").value);
+
+    let result;
+
+    switch(op)
+    {
+        case "+":
+            result = n1 + n2;
+            break;
+
+        case "-":
+            result = n1 - n2;
+            break;
+
+        case "*":
+            result = n1 * n2;
+            break;
+
+        case "/":
+            if(n2 == 0)
+            {
+                alert("Division by zero is not allowed.");
+                console.log("Division by Zero");
+                document.write("Division by Zero");
+                return;
+            }
+            result = n1 / n2;
+            break;
+
+        case "sqrt":
+            result = Math.sqrt(n1);
+            break;
+
+        case "pow":
+            result = Math.pow(n1, n2);
+            break;
+
+        case "sin":
+            result = Math.sin(n1);
+            break;
+
+        case "cos":
+            result = Math.cos(n1);
+            break;
+
+        case "tan":
+            result = Math.tan(n1);
+            break;
+    }
+
+    alert("Result = " + result);
+    console.log("Result = " + result);
+
+    document.write("<h2>Scientific Calculator</h2>");
+    document.write("<h3>Result = " + result + "</h3>");
+}
+
+</script>
+
+</body>
+</html>

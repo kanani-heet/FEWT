@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyboard Events</title>
+</head>
+<body>
+
+<h2>Press Any Key</h2>
+
+<input type="text"
+onkeydown="keyDown(event)"
+onkeyup="keyUp()">
+
+<p id="output"></p>
+
+<script>
+
+function keyDown(event) {
+
+    var key = event.key;
+
+    var msg = "Key Pressed : " + key +
+    "<br>Key Code : " + event.keyCode;
+
+    if(key=="a" || key=="e" || key=="i" ||
+       key=="o" || key=="u" ||
+       key=="A" || key=="E" || key=="I" ||
+       key=="O" || key=="U")
+    {
+        msg += "<br>Vowel Key Pressed";
+    }
+
+    document.getElementById("output").innerHTML = msg;
+}
+
+function keyUp() {
+    document.body.style.backgroundColor = "blue";
+}
+
+</script>
+
+</body>
+</html>

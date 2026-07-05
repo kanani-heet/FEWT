@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting</title>
+</head>
+<body>
+
+Enter Name:
+<input type="text" id="name">
+
+<button onclick="greet()">Submit</button>
+
+<h2 id="msg"></h2>
+
+<script>
+function greet() {
+    var n = document.getElementById("name").value;
+    document.getElementById("msg").innerHTML = "Hello " + n + "!";
+}
+</script>
+
+</body>
+</html>

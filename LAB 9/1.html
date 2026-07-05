@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+
+<h2>User Validation Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Username:
+    <input type="text" id="username"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    Confirm Password:
+    <input type="password" id="confirmPassword"><br><br>
+
+    Date of Birth:
+    <input type="date" id="dob"><br><br>
+
+    Enrollment Number:
+    <input type="text" id="enrollment"><br><br>
+
+    Email:
+    <input type="text" id="email"><br><br>
+
+    <input type="submit" value="Validate">
+
+</form>
+
+<script>
+
+function validateForm()
+{
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let dob = document.getElementById("dob").value;
+    let enrollment = document.getElementById("enrollment").value;
+    let email = document.getElementById("email").value;
+
+    // Username Validation
+    if(username.length < 8)
+    {
+        alert("Username must contain minimum 8 characters.");
+        console.log("Username Validation Failed");
+        document.write("Username Validation Failed");
+        return false;
+    }
+
+    // Password Validation
+    let passPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,12}$/;
+
+    if(!passPattern.test(password))
+    {
+        alert("Password must contain 8-12 characters, at least one digit and one special character.");
+        console.log("Password Validation Failed");
+        document.write("Password Validation Failed");
+        return false;
+    }
+
+    // Confirm Password
+    if(password != confirmPassword)
+    {
+        alert("Password and Confirm Password do not match.");
+        console.log("Password Match Failed");
+        document.write("Password Match Failed");
+        return false;
+    }
+
+    // Age Validation
+    let birthDate = new Date(dob);
+    let today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    let month = today.getMonth() - birthDate.getMonth();
+
+    if(month < 0 || (month == 0 && today.getDate() < birthDate.getDate()))
+    {
+        age--;
+    }
+
+    if(age <= 18)
+    {
+        alert("Age must be greater than 18 years.");
+        console.log("Age Validation Failed");
+        document.write("Age Validation Failed");
+        return false;
+    }
+
+    // Enrollment Validation
+    let enrollPattern = /^[0-9]{11}$/;
+
+    if(!enrollPattern.test(enrollment))
+    {
+        alert("Enrollment number must contain exactly 11 digits.");
+        console.log("Enrollment Validation Failed");
+        document.write("Enrollment Validation Failed");
+        return false;
+    }
+
+    // Email Validation
+    let emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if(!emailPattern.test(email))
+    {
+        alert("Invalid Email Format.");
+        console.log("Email Validation Failed");
+        document.write("Email Validation Failed");
+        return false;
+    }
+
+    // Success Message
+    alert("All Validations Passed Successfully.");
+    console.log("All Validations Passed Successfully.");
+
+    document.write("<h2>All Validations Passed Successfully.</h2>");
+    document.write("<br>Username : " + username);
+    document.write("<br>Age : " + age);
+    document.write("<br>Enrollment : " + enrollment);
+    document.write("<br>Email : " + email);
+
+    return false;
+}
+
+</script>
+
+</body>
+</html>

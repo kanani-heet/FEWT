@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Over</title>
+</head>
+<body>
+
+<h1 onmouseover="redColor()" onmouseout="blackColor()">
+Move Mouse Here
+</h1>
+
+<script>
+function redColor() {
+    document.querySelector("h1").style.color = "red";
+}
+
+function blackColor() {
+    document.querySelector("h1").style.color = "black";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>getElementById() Example</title>
+</head>
+<body>
+
+    <h2 id="heading">Hello Students</h2>
+
+    <button onclick="changeText()">Click Here</button>
+
+    <script>
+        function changeText() {
+            // Access element using getElementById()
+            var element = document.getElementById("heading");
+
+            // Change the text
+            element.innerHTML = "Welcome to JavaScript DOM";
+
+            // Display messages
+            alert("Text Changed Successfully!");
+            console.log("Heading changed using getElementById()");
+            document.write("<h3>document.write() executed successfully.</h3>");
+        }
+    </script>
+
+</body>
+</html>

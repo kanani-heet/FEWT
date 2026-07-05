@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Append Object to Array</title>
+</head>
+<body>
+
+<h2>Append Object to Array</h2>
+
+<script>
+    let students = [
+        {id: 1, name: "Rahul"},
+        {id: 2, name: "Priya"}
+    ];
+
+    // Append new object
+    students.push({id: 3, name: "Heet"});
+
+    document.write("<b>Students List:</b><br><br>");
+
+    students.forEach(student => {
+        document.write("ID: " + student.id +
+        " Name: " + student.name + "<br>");
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Callback Function</title>
+</head>
+<body>
+
+<h2>Callback Function Example</h2>
+
+<script>
+function greet(name, callback) {
+    document.write("Hello " + name + "<br>");
+    callback();
+}
+
+function message() {
+    document.write("Welcome to JavaScript!");
+}
+
+greet("Heet", message);
+</script>
+
+</body>
+</html>

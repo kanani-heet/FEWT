@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>getElementsByTagName() Example</title>
+</head>
+<body>
+
+    <h2>Programming Languages</h2>
+
+    <p>Java</p>
+    <p>Python</p>
+    <p>JavaScript</p>
+
+    <button onclick="showTags()">Click Here</button>
+
+    <script>
+        function showTags() {
+            // Get all <p> elements
+            var para = document.getElementsByTagName("p");
+
+            for (var i = 0; i < para.length; i++) {
+                alert("Paragraph " + (i + 1) + ": " + para[i].innerHTML);
+                console.log("Paragraph " + (i + 1) + ": " + para[i].innerHTML);
+                document.write("<h3>" + para[i].innerHTML + "</h3>");
+            }
+        }
+    </script>
+
+</body>
+</html>

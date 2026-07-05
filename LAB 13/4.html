@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Type</title>
+</head>
+<body>
+
+<h2>Press Any Key</h2>
+
+<input type="text" onkeydown="checkKey(event)">
+
+<p id="result"></p>
+
+<script>
+function checkKey(event)
+{
+    let ch = event.key;
+
+    if (ch >= '0' && ch <= '9')
+    {
+        document.getElementById("result").innerHTML =
+        ch + " is a Number";
+    }
+    else if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+    {
+        document.getElementById("result").innerHTML =
+        ch + " is an Alphabet";
+    }
+    else
+    {
+        document.getElementById("result").innerHTML =
+        ch + " is a Symbol";
+    }
+}
+</script>
+
+</body>
+</html>

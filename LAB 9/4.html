@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Static Login Page</title>
+</head>
+<body>
+
+<h2>Login Page</h2>
+
+<form onsubmit="return login()">
+
+    Username:
+    <input type="text" id="username"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    <input type="submit" value="Login">
+
+</form>
+
+<script>
+
+function login()
+{
+    // Static Username and Password
+    let user = "admin";
+    let pass = "admin123";
+
+    // User Input
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    // Empty Validation
+    if(username == "" || password == "")
+    {
+        alert("Please enter Username and Password.");
+        console.log("Login Failed");
+        document.write("Login Failed");
+        return false;
+    }
+
+    // Login Validation
+    if(username == user && password == pass)
+    {
+        alert("Login Successful.");
+        console.log("Login Successful");
+
+        document.write("<h2>Login Successful</h2>");
+        document.write("<br>Welcome, " + username);
+    }
+    else
+    {
+        alert("Invalid Username or Password.");
+        console.log("Invalid Login");
+        document.write("Invalid Username or Password");
+    }
+
+    return false;
+}
+
+</script>
+
+</body>
+</html>

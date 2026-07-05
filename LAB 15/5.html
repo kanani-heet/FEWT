@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Numbers Between Two Numbers</title>
+</head>
+<body>
+
+<script>
+let start = parseInt(prompt("Enter starting number:"));
+let end = parseInt(prompt("Enter ending number:"));
+
+const isPrime = (n) => {
+    if (n <= 1)
+        return false;
+
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+};
+
+document.write("Prime Numbers:<br>");
+
+for (let i = start; i <= end; i++) {
+    if (isPrime(i))
+        document.write(i + "<br>");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Form Validation</title>
+</head>
+<body>
+
+<h2>Employee Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Username:
+    <input type="text" id="username"><br><br>
+
+    Email:
+    <input type="text" id="email"><br><br>
+
+    Contact Number:
+    <input type="text" id="contact"><br><br>
+
+    Gender:
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br><br>
+
+    City:
+    <select id="city">
+        <option value="">--Select City--</option>
+        <option>Ahmedabad</option>
+        <option>Rajkot</option>
+        <option>Surat</option>
+        <option>Vadodara</option>
+    </select>
+    <br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    Confirm Password:
+    <input type="password" id="confirmPassword"><br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<script>
+
+function validateForm()
+{
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let contact = document.getElementById("contact").value;
+    let city = document.getElementById("city").value;
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+
+    // Username Validation
+    if(username.length < 5)
+    {
+        alert("Username must contain at least 5 characters.");
+        console.log("Username Validation Failed");
+        document.write("Username Validation Failed");
+        return false;
+    }
+
+    // Email Validation
+    let emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if(!emailPattern.test(email))
+    {
+        alert("Invalid Email Address.");
+        console.log("Email Validation Failed");
+        document.write("Email Validation Failed");
+        return false;
+    }
+
+    // Contact Validation
+    let contactPattern = /^[0-9]{10}$/;
+
+    if(!contactPattern.test(contact))
+    {
+        alert("Contact Number must contain exactly 10 digits.");
+        console.log("Contact Validation Failed");
+        document.write("Contact Validation Failed");
+        return false;
+    }
+
+    // Gender Validation
+    let gender = document.getElementsByName("gender");
+    let selectedGender = "";
+
+    for(let i=0; i<gender.length; i++)
+    {
+        if(gender[i].checked)
+        {
+            selectedGender = gender[i].value;
+        }
+    }
+
+    if(selectedGender == "")
+    {
+        alert("Please Select Gender.");
+        console.log("Gender Validation Failed");
+        document.write("Gender Validation Failed");
+        return false;
+    }
+
+    // City Validation
+    if(city == "")
+    {
+        alert("Please Select City.");
+        console.log("City Validation Failed");
+        document.write("City Validation Failed");
+        return false;
+    }
+
+    // Password Validation
+    let passPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,12}$/;
+
+    if(!passPattern.test(password))
+    {
+        alert("Password must be 8-12 characters with one digit and one special character.");
+        console.log("Password Validation Failed");
+        document.write("Password Validation Failed");
+        return false;
+    }
+
+    // Confirm Password
+    if(password != confirmPassword)
+    {
+        alert("Password and Confirm Password do not match.");
+        console.log("Password Match Failed");
+        document.write("Password Match Failed");
+        return false;
+    }
+
+    // Success
+    alert("Employee Registration Successful.");
+    console.log("Employee Registration Successful.");
+
+    document.write("<h2>Employee Registration Successful</h2>");
+    document.write("<br><b>Username:</b> " + username);
+    document.write("<br><b>Email:</b> " + email);
+    document.write("<br><b>Contact:</b> " + contact);
+    document.write("<br><b>Gender:</b> " + selectedGender);
+    document.write("<br><b>City:</b> " + city);
+
+    return false;
+}
+
+</script>
+
+</body>
+</html>

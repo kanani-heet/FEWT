@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Properties</title>
+</head>
+<body>
+
+<h2 id="text">Press any key inside the box</h2>
+
+<input type="text" onkeyup="changeStyle()">
+
+<script>
+function changeStyle()
+{
+    let t = document.getElementById("text");
+
+    t.style.color = "blue";
+    t.style.backgroundColor = "yellow";
+    t.style.fontSize = "30px";
+    t.style.fontWeight = "bold";
+}
+</script>
+
+</body>
+</html>

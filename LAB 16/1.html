@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>join() and split()</title>
+</head>
+<body>
+
+<h2>join() and split() Demo</h2>
+
+<script>
+    let fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+    document.write("<b>Original Array:</b> " + fruits + "<br><br>");
+
+    // join()
+    let joined = fruits.join(" - ");
+    document.write("<b>After join():</b> " + joined + "<br><br>");
+
+    // split()
+    let text = "HTML,CSS,JavaScript";
+    let result = text.split(",");
+
+    document.write("<b>Original String:</b> " + text + "<br><br>");
+    document.write("<b>After split():</b> " + result);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Name:
+    <input type="text" id="name"><br><br>
+
+    Email:
+    <input type="text" id="email"><br><br>
+
+    Contact Number:
+    <input type="text" id="contact"><br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+<script>
+
+function validateForm()
+{
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let contact = document.getElementById("contact").value;
+
+    // Name Validation
+    let namePattern = /^[A-Za-z ]+$/;
+
+    if(name == "")
+    {
+        alert("Name cannot be empty.");
+        console.log("Name Validation Failed");
+        document.write("Name Validation Failed");
+        return false;
+    }
+
+    if(!namePattern.test(name))
+    {
+        alert("Name should contain only letters.");
+        console.log("Invalid Name");
+        document.write("Invalid Name");
+        return false;
+    }
+
+    // Email Validation
+    let emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if(!emailPattern.test(email))
+    {
+        alert("Invalid Email Address.");
+        console.log("Email Validation Failed");
+        document.write("Email Validation Failed");
+        return false;
+    }
+
+    // Contact Number Validation
+    let contactPattern = /^[0-9]{10}$/;
+
+    if(!contactPattern.test(contact))
+    {
+        alert("Contact Number must contain exactly 10 digits.");
+        console.log("Contact Validation Failed");
+        document.write("Contact Validation Failed");
+        return false;
+    }
+
+    // Success Message
+    alert("Student Registration Successful.");
+    console.log("Student Registration Successful.");
+
+    document.write("<h2>Student Registration Successful</h2>");
+    document.write("<br><b>Name :</b> " + name);
+    document.write("<br><b>Email :</b> " + email);
+    document.write("<br><b>Contact Number :</b> " + contact);
+
+    return false;
+}
+
+</script>
+
+</body>
+</html>
