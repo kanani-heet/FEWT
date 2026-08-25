@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>LAB</title>
+</head>
+<body>
+
+	<script>
+
+		const num=[10,25,18,14,6,10,18];
+		let res=num.reduce((acc,curr)=>{
+			if(!acc.includes(curr))
+				acc.push(curr);
+
+			return acc;
+
+		},[]);
+
+		console.log(res);
+
+	</script>
+
+</body>
+</html>
