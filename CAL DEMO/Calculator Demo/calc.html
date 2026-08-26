@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator in JavaScript</title>
+</head>
+<body>
+
+	<table>
+
+		<tr>
+			<td colspan="4"><input type="text" name="" id="res" disabled></td>
+		</tr>
+		
+		<tr colspan="4">
+			<td><button onclick="append('7')">7</button></td>
+			<td><button onclick="append('8')">8</button></td>
+			<td><button onclick="append('9')">9</button></td>
+			<td><button onclick="append('+')">+</button></td>
+		</tr>
+
+		<tr colspan="4">
+			<td><button onclick="append('4')">4</button></td>
+			<td><button onclick="append('5')">5</button></td>
+			<td><button onclick="append('6')">6</button></td>
+			<td><button onclick="append('-')">-</button></td>
+		</tr>
+
+		<tr colspan="4">
+			<td><button onclick="append('1')">1</button></td>
+			<td><button onclick="append('2')">2</button></td>
+			<td><button onclick="append('3')">3</button></td>
+			<td><button onclick="append('*')">*</button></td>
+		</tr>
+
+		
+		<tr colspan="4">
+			<td><button onclick="append('0')">0</button></td>
+			<td><button onclick="append('.')">.</button></td>
+			<td><button onclick="ans()">=</button></td>
+			<td><button onclick="append('/')">/</button></td>
+		</tr>
+
+		<tr>
+			<td colspan="4"><button onclick="clearr()">clear</button></td>
+		</tr>
+
+	</table>
+
+	<script type="text/javascript">
+
+		function append(value){
+			document.getElementById('res').value+=value;
+		}
+
+		function clearr(){
+			document.getElementById('res').value="";
+		}
+
+		function ans()
+		{
+			var ans=eval(document.getElementById('res').value);
+			document.getElementById('res').value=ans;
+		}
+
+	</script>
+	
+</body>
+</html>

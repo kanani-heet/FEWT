@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .buttons { margin: 10px 0; }
+        button { margin-right: 5px; padding: 5px 10px; cursor: pointer; }
+        .list-container { margin-top: 15px; }
+        .complete { color: green; font-weight: bold; }
+        .incomplete { color: red; font-style: italic; }
+        li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="taskInput" placeholder="Enter your text here...">
+    
+    <div class="buttons">
+        <button onclick="addText('complete')">Complete</button>
+        <button onclick="addText('incomplete')">Incomplete</button>
+    </div>
+
+    <ul id="displayList"></ul>
+
+    <script>
+        function addText(status) 
+        {
+            const input = document.getElementById('taskInput');
+            const textValue = input.value.trim();
+            
+            if (textValue === '') 
+            {
+                alert('Please enter some text first!');
+                return;
+            }
+
+            const ul = document.getElementById('displayList');
+            const li = document.createElement('li');
+            
+            li.textContent = textValue;
+            li.classList.add(status);
+            
+            ul.appendChild(li);
+            input.value = ''; 
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Tracker</title>
+    <style>
+        .complete { color: green; font-weight: bold; }
+        .incomplete { color: red; font-style: italic; }
+    </style>
+</head>
+<body>
+    <input type="text" id="taskInput" placeholder="Enter task...">
+    <button onclick="add('complete')">Complete</button>
+    <button onclick="add('incomplete')">Incomplete</button>
+    <ul id="list"></ul>
+
+    <script>
+        function add(status) {
+            const input = document.getElementById('taskInput');
+            if (!input.value.trim()) return;
+            
+            document.getElementById('list').innerHTML += `<li class="${status}">${input.value}</li>`;
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
